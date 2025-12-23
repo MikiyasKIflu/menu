@@ -32,7 +32,7 @@ const Navbar = ({ onMenuClick }) => {
                 <button onClick={onMenuClick} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--primary)' }}>
                     <Menu size={28} />
                 </button>
-                <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--text-main)' }}>
+                <Link to="/" className="navbar-logo" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--text-main)' }}>
                     <div style={{ width: '40px', height: '40px', borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--primary)' }}>
                         <img src={getLogo()} alt="Ayu Shiro Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
@@ -56,7 +56,7 @@ const Navbar = ({ onMenuClick }) => {
                     {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
                 </button>
 
-                <div style={{
+                <div className="mobile-hide" style={{
                     display: 'flex',
                     gap: '0.5rem',
                     alignItems: 'center',

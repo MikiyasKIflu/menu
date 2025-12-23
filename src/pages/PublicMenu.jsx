@@ -81,18 +81,18 @@ const PublicMenu = () => {
             {/* Navbar with Menu Toggle */}
             <Navbar onMenuClick={() => setIsSidebarOpen(true)} />
 
-            <header id="website-section" style={{
+            <header id="website-section" className="hero-section" style={{
                 textAlign: 'center',
                 padding: '5rem 1rem',
                 marginBottom: '3rem',
-                backgroundColor: 'rgba(255, 255, 255, 0.05)', // Increased visibility
+                backgroundColor: 'rgba(255, 255, 255, 0.05)',
                 borderRadius: 'var(--border-radius)',
-                border: '2px solid var(--primary)', // Stronger border
+                border: '2px solid var(--primary)',
                 backdropFilter: 'blur(15px)',
                 boxShadow: 'var(--shadow)'
             }} data-aos="fade-down">
-                <h1 className="breathing-text" style={{
-                    fontSize: 'clamp(3rem, 10vw, 4.5rem)',
+                <h1 className="breathing-text hero-title" style={{
+                    fontSize: 'clamp(2.8rem, 10vw, 4.5rem)',
                     marginBottom: '0.5rem',
                     background: 'linear-gradient(to right, var(--primary), var(--accent))',
                     WebkitBackgroundClip: 'text',
@@ -198,12 +198,12 @@ const PublicMenu = () => {
                     {t.loading}
                 </div>
             ) : (
-                <div id="menu-section" style={{
+                <div id="menu-section" className="menu-section" style={{
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '4rem',
                     padding: '4rem 1.5rem',
-                    backgroundColor: 'rgba(255, 255, 255, 0.02)', // More distinct menu bg
+                    backgroundColor: 'rgba(255, 255, 255, 0.02)',
                     borderRadius: 'var(--border-radius)',
                     marginTop: '3rem',
                     border: '1px solid var(--glass-border)',
@@ -221,10 +221,10 @@ const PublicMenu = () => {
                                 }}>
                                     {data.label}
                                 </h2>
-                                <div style={{
+                                <div className="menu-grid" style={{
                                     display: 'grid',
-                                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', // auto-fit for balance
-                                    gap: '2.5rem', // Generous spacing
+                                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                                    gap: '2.5rem',
                                     justifyContent: 'center'
                                 }}>
                                     {data.items.map((item, i) => (
@@ -240,9 +240,9 @@ const PublicMenu = () => {
             )}
 
             {/* Feedback Section */}
-            <div id="feedback-section" style={{
+            <div id="feedback-section" className="feedback-section" style={{
                 marginTop: '4rem',
-                backgroundColor: 'var(--primary)', // Bold background
+                backgroundColor: 'var(--primary)',
                 padding: '5rem 2rem',
                 borderRadius: 'var(--border-radius)',
                 textAlign: 'center',
@@ -257,9 +257,9 @@ const PublicMenu = () => {
             </div>
 
             {/* Review Section */}
-            <div id="review-section" style={{
+            <div id="review-section" className="review-section" style={{
                 marginTop: '4rem',
-                backgroundColor: 'var(--accent)', // Bold background
+                backgroundColor: 'var(--accent)',
                 padding: '5rem 2rem',
                 borderRadius: 'var(--border-radius)',
                 textAlign: 'center',

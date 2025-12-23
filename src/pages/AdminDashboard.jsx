@@ -115,8 +115,8 @@ const AdminDashboard = () => {
                 />
             )}
 
-            <div className="glass-panel" style={{ overflowX: 'auto' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+            <div className="glass-panel" style={{ overflowX: 'auto', padding: '1rem' }}>
+                <table className="admin-table" style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
                     <thead>
                         <tr style={{ borderBottom: '1px solid #e0e0e0' }}>
                             <th style={{ padding: '1rem' }}>Name</th>
@@ -129,13 +129,13 @@ const AdminDashboard = () => {
                     <tbody>
                         {menuItems.map(item => (
                             <tr key={item.id} style={{ borderBottom: '1px solid #e0e0e0' }}>
-                                <td style={{ padding: '1rem' }}>
+                                <td data-label="Name" style={{ padding: '1rem' }}>
                                     <div style={{ fontWeight: 'bold' }}>{item.name_en}</div>
                                     <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>{item.name_local}</div>
                                 </td>
-                                <td style={{ padding: '1rem' }}>{item.category}</td>
-                                <td style={{ padding: '1rem' }}>{item.price} ETB</td>
-                                <td style={{ padding: '1rem' }}>
+                                <td data-label="Category" style={{ padding: '1rem' }}>{item.category}</td>
+                                <td data-label="Price" style={{ padding: '1rem' }}>{item.price} ETB</td>
+                                <td data-label="Status" style={{ padding: '1rem' }}>
                                     <button
                                         onClick={() => toggleAvailability(item.id, item.is_available)}
                                         style={{
@@ -152,19 +152,19 @@ const AdminDashboard = () => {
                                         {item.is_available ? 'Active' : 'Hidden'}
                                     </button>
                                 </td>
-                                <td style={{ padding: '1rem' }}>
-                                    <div style={{ display: 'flex', gap: '0.5rem' }}>
+                                <td data-label="Actions" style={{ padding: '1rem' }}>
+                                    <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end' }}>
                                         <button
                                             onClick={() => { setItemToEdit(item); setIsEditing(true); }}
                                             className="btn btn-secondary"
-                                            style={{ padding: '0.5rem' }}
+                                            style={{ padding: '0.5rem', width: 'auto' }}
                                         >
                                             <Edit size={16} />
                                         </button>
                                         <button
                                             onClick={() => handleDelete(item.id)}
                                             className="btn btn-danger"
-                                            style={{ padding: '0.5rem' }}
+                                            style={{ padding: '0.5rem', width: 'auto' }}
                                         >
                                             <Trash2 size={16} />
                                         </button>
