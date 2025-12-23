@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
 import Navbar from '../components/Navbar';
 import MenuForm from '../components/MenuForm';
-import { Edit, Trash2, Plus, Eye, EyeOff } from 'lucide-react';
+import { Edit, Trash2, Plus, Eye, EyeOff, ArrowLeft } from 'lucide-react';
 
 const AdminDashboard = () => {
     const [menuItems, setMenuItems] = useState([]);
